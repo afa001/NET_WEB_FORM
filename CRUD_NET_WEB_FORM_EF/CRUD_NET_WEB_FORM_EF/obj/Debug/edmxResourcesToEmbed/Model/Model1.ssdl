@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbRecursosHumanosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AreaId" Type="int" />
+  </EntityType>
+  <EntityType Name="Certificado">
+    <Key>
+      <PropertyRef Name="IdCertificado" />
+    </Key>
+    <Property Name="IdCertificado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Logo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Header" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Body" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Footer" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FechaCertificacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="IdDocumento" />
+    </Key>
+    <Property Name="IdDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulo">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Operacion">
+    <Key>
+      <PropertyRef Name="IdOperacion" />
+    </Key>
+    <Property Name="IdOperacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuloId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PeriodosVacacionesFuncionario">
+    <Key>
+      <PropertyRef Name="IdPeriodoVacaciones" />
+    </Key>
+    <Property Name="IdPeriodoVacaciones" Type="int" Nullable="false" />
+    <Property Name="FuncionarioId" Type="int" Nullable="false" />
+    <Property Name="FechaInicio" Type="date" Nullable="false" />
+    <Property Name="FechaFin" Type="date" Nullable="false" />
+    <Property Name="DiasPendientes" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioUModificacion" Type="int" />
+    <Property Name="FechaUModificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol_Operaciones">
+    <Key>
+      <PropertyRef Name="IdRol_Operaciones" />
+    </Key>
+    <Property Name="IdRol_Operaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolId" Type="int" Nullable="false" />
+    <Property Name="OperacionId" Type="int" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="IdSolicitud" />
+    </Key>
+    <Property Name="IdSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TipoSolicitudId" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tipo_Contrato">
+    <Key>
+      <PropertyRef Name="IdTipoContrato" />
+    </Key>
+    <Property Name="IdTipoContrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Solicitud">
+    <Key>
+      <PropertyRef Name="IdTipoSolicitud" />
+    </Key>
+    <Property Name="IdTipoSolicitud" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="IdCertificado" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrimerNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SegundoNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimerApellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SegundoApellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DocumentoId" Type="int" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LugarExpedicion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaExpedicion" Type="datetime" Nullable="false" />
+    <Property Name="CargoId" Type="int" Nullable="false" />
+    <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="TipoContratoId" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IdRol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VacacionesTomadasFuncionario">
+    <Key>
+      <PropertyRef Name="IdVacacionesTomadasFuncionario" />
+    </Key>
+    <Property Name="IdVacacionesTomadasFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PeriodoVacacionesId" Type="int" Nullable="false" />
+    <Property Name="DiasVacaciones" Type="int" Nullable="false" />
+    <Property Name="FechaInicio" Type="date" Nullable="false" />
+    <Property Name="FechaFin" Type="date" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="350" />
+    <Property Name="UsuarioCreaId" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioUModificacion" Type="int" />
+    <Property Name="FechaUModificacion" Type="datetime" />
+    <Property Name="TipoLiquidacion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Cargo_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="Cargo">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modulo_Operaciones_Modulo">
+    <End Role="Modulo" Type="Self.Modulo" Multiplicity="1" />
+    <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulo">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="Operacion">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeriodosVacacionesFuncionario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="PeriodosVacacionesFuncionario" Type="Self.PeriodosVacacionesFuncionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="PeriodosVacacionesFuncionario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rol_Operaciones_Operacion">
+    <End Role="Operacion" Type="Self.Operacion" Multiplicity="0..1" />
+    <End Role="Rol_Operaciones" Type="Self.Rol_Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operacion">
+        <PropertyRef Name="IdOperacion" />
+      </Principal>
+      <Dependent Role="Rol_Operaciones">
+        <PropertyRef Name="OperacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rol_Operaciones_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Rol_Operaciones" Type="Self.Rol_Operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="Rol_Operaciones">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Tipo_Solicitud">
+    <End Role="Tipo_Solicitud" Type="Self.Tipo_Solicitud" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Solicitud">
+        <PropertyRef Name="IdTipoSolicitud" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="TipoSolicitudId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Solicitud_Certificado">
+    <End Role="Certificado" Type="Self.Certificado" Multiplicity="0..1" />
+    <End Role="Tipo_Solicitud" Type="Self.Tipo_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certificado">
+        <PropertyRef Name="IdCertificado" />
+      </Principal>
+      <Dependent Role="Tipo_Solicitud">
+        <PropertyRef Name="IdCertificado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Cargo">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="CargoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Documento">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="DocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Tipo_Contrato">
+    <End Role="Tipo_Contrato" Type="Self.Tipo_Contrato" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Contrato">
+        <PropertyRef Name="IdTipoContrato" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="TipoContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VacacionesTomadasFuncionario_PeriodosVacacionesFuncionario">
+    <End Role="PeriodosVacacionesFuncionario" Type="Self.PeriodosVacacionesFuncionario" Multiplicity="1" />
+    <End Role="VacacionesTomadasFuncionario" Type="Self.VacacionesTomadasFuncionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PeriodosVacacionesFuncionario">
+        <PropertyRef Name="IdPeriodoVacaciones" />
+      </Principal>
+      <Dependent Role="VacacionesTomadasFuncionario">
+        <PropertyRef Name="PeriodoVacacionesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbRecursosHumanosModelStoreContainer">
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificado" EntityType="Self.Certificado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modulo" EntityType="Self.Modulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operacion" EntityType="Self.Operacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PeriodosVacacionesFuncionario" EntityType="Self.PeriodosVacacionesFuncionario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol_Operaciones" EntityType="Self.Rol_Operaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Contrato" EntityType="Self.Tipo_Contrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Solicitud" EntityType="Self.Tipo_Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VacacionesTomadasFuncionario" EntityType="Self.VacacionesTomadasFuncionario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cargo_Area" Association="Self.FK_Cargo_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Cargo" EntitySet="Cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modulo_Operaciones_Modulo" Association="Self.FK_Modulo_Operaciones_Modulo">
+      <End Role="Modulo" EntitySet="Modulo" />
+      <End Role="Operacion" EntitySet="Operacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeriodosVacacionesFuncionario_Usuario" Association="Self.FK_PeriodosVacacionesFuncionario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PeriodosVacacionesFuncionario" EntitySet="PeriodosVacacionesFuncionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rol_Operaciones_Operacion" Association="Self.FK_Rol_Operaciones_Operacion">
+      <End Role="Operacion" EntitySet="Operacion" />
+      <End Role="Rol_Operaciones" EntitySet="Rol_Operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rol_Operaciones_Rol" Association="Self.FK_Rol_Operaciones_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Rol_Operaciones" EntitySet="Rol_Operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Tipo_Solicitud" Association="Self.FK_Solicitud_Tipo_Solicitud">
+      <End Role="Tipo_Solicitud" EntitySet="Tipo_Solicitud" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Usuario" Association="Self.FK_Solicitud_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Solicitud_Certificado" Association="Self.FK_Tipo_Solicitud_Certificado">
+      <End Role="Certificado" EntitySet="Certificado" />
+      <End Role="Tipo_Solicitud" EntitySet="Tipo_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Cargo" Association="Self.FK_Usuario_Cargo">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Documento" Association="Self.FK_Usuario_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Tipo_Contrato" Association="Self.FK_Usuario_Tipo_Contrato">
+      <End Role="Tipo_Contrato" EntitySet="Tipo_Contrato" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VacacionesTomadasFuncionario_PeriodosVacacionesFuncionario" Association="Self.FK_VacacionesTomadasFuncionario_PeriodosVacacionesFuncionario">
+      <End Role="PeriodosVacacionesFuncionario" EntitySet="PeriodosVacacionesFuncionario" />
+      <End Role="VacacionesTomadasFuncionario" EntitySet="VacacionesTomadasFuncionario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

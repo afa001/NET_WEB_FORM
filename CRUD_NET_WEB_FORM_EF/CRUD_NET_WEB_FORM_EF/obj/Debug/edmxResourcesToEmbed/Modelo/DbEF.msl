@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbRecursosHumanosModelStoreContainer" CdmEntityContainer="dbRecursosHumanosEntities">
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargo">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificado">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Certificado">
+        <MappingFragment StoreEntitySet="Certificado">
+          <ScalarProperty Name="IdCertificado" ColumnName="IdCertificado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Footer" ColumnName="Footer" />
+          <ScalarProperty Name="FechaCertificacion" ColumnName="FechaCertificacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Documento">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulo">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Modulo">
+        <MappingFragment StoreEntitySet="Modulo">
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operacion">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Operacion">
+        <MappingFragment StoreEntitySet="Operacion">
+          <ScalarProperty Name="IdOperacion" ColumnName="IdOperacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PeriodosVacacionesFuncionario">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.PeriodosVacacionesFuncionario">
+        <MappingFragment StoreEntitySet="PeriodosVacacionesFuncionario">
+          <ScalarProperty Name="IdPeriodoVacaciones" ColumnName="IdPeriodoVacaciones" />
+          <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="DiasPendientes" ColumnName="DiasPendientes" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioUModificacion" ColumnName="UsuarioUModificacion" />
+          <ScalarProperty Name="FechaUModificacion" ColumnName="FechaUModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol_Operaciones">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Rol_Operaciones">
+        <MappingFragment StoreEntitySet="Rol_Operaciones">
+          <ScalarProperty Name="IdRol_Operaciones" ColumnName="IdRol_Operaciones" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="OperacionId" ColumnName="OperacionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Solicitud">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Solicitud">
+        <MappingFragment StoreEntitySet="Solicitud">
+          <ScalarProperty Name="IdSolicitud" ColumnName="IdSolicitud" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="TipoSolicitudId" ColumnName="TipoSolicitudId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Contrato">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Tipo_Contrato">
+        <MappingFragment StoreEntitySet="Tipo_Contrato">
+          <ScalarProperty Name="IdTipoContrato" ColumnName="IdTipoContrato" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Solicitud">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Tipo_Solicitud">
+        <MappingFragment StoreEntitySet="Tipo_Solicitud">
+          <ScalarProperty Name="IdTipoSolicitud" ColumnName="IdTipoSolicitud" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCertificado" ColumnName="IdCertificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+          <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="DocumentoId" ColumnName="DocumentoId" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="LugarExpedicion" ColumnName="LugarExpedicion" />
+          <ScalarProperty Name="FechaExpedicion" ColumnName="FechaExpedicion" />
+          <ScalarProperty Name="CargoId" ColumnName="CargoId" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="TipoContratoId" ColumnName="TipoContratoId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VacacionesTomadasFuncionario">
+      <EntityTypeMapping TypeName="dbRecursosHumanosModel.VacacionesTomadasFuncionario">
+        <MappingFragment StoreEntitySet="VacacionesTomadasFuncionario">
+          <ScalarProperty Name="IdVacacionesTomadasFuncionario" ColumnName="IdVacacionesTomadasFuncionario" />
+          <ScalarProperty Name="PeriodoVacacionesId" ColumnName="PeriodoVacacionesId" />
+          <ScalarProperty Name="DiasVacaciones" ColumnName="DiasVacaciones" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="UsuarioCreaId" ColumnName="UsuarioCreaId" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioUModificacion" ColumnName="UsuarioUModificacion" />
+          <ScalarProperty Name="FechaUModificacion" ColumnName="FechaUModificacion" />
+          <ScalarProperty Name="TipoLiquidacion" ColumnName="TipoLiquidacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
