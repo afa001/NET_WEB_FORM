@@ -9,8 +9,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+       <p>
+           Nombre:
+           <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+       </p>        
+        <p>
+           <asp:Button ID="btnSave" runat="server" OnClick="btnSaveOnclick" Text="Guardar"/>
+        </p>
+         <asp:GridView ID="gvDocuments" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>
